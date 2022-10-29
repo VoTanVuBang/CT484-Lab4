@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myshop/ui/cart/cart_manager.dart';
+import 'package:myshop/ui/products/products_manager.dart';
 import '../../models/product.dart';
 import 'product_detail_screen.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +43,7 @@ final Product product;
                     ),
                     color: Theme.of(context).colorScheme.secondary,
                     onPressed: (){
-                      product.isFavorite = !isFavorite;
+                      ctx.read<ProductsManager>().toggleFavoriteStatus(product);
                     },
                       );
                     },
